@@ -10,4 +10,9 @@ public class HelloWorldContoller {
 	public String helloWorld() {
 		return "HelloWorld";
 	}
+	
+	@GetMapping(path="/helloworldbean")
+	public HelloWorldBean helloWorldBean() {
+		return new HelloWorldBean("HelloWorld");
+	}
 }
