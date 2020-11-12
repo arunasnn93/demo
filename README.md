@@ -1,3 +1,4 @@
 # Demo Project
 
-This is just an empty project.
+Playing with springboot.
+Helloworld and User web services
