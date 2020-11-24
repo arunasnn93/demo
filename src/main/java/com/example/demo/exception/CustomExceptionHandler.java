@@ -2,6 +2,7 @@ package com.example.demo.exception;
 
 import java.util.Date;
 
+import org.springframework.context.NoSuchMessageException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -21,5 +22,12 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler{
 		ExceptionResponse response = new ExceptionResponse(new Date(), ex.getMessage(), request.getDescription(false));
 		return new ResponseEntity(response,HttpStatus.INTERNAL_SERVER_ERROR);
 		
+	}
+	
+	@ExceptionHandler(NoSuchMessageException.class)
+	public final ResponseEntity<Object> handleNoSuchMsg(Exception ex, WebRequest request){
+
+		ExceptionResponse response = new ExceptionResponse(new Date(), ex.getMessage(), request.getDescription(false));
+		return new ResponseEntity(response,HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 }

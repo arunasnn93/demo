@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
 public class UserController {
 
@@ -29,6 +30,7 @@ public class UserController {
 		if(user == null) {
 			throw new UserNotFoundException("id - "+id);
 		}
+		
 		return user;
 	}
 	

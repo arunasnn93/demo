@@ -2,10 +2,15 @@ package com.example.demo.user;
 
 import java.util.Date;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(description= "All details of users")
 public class User {
 
 	private Integer id;
 	private String name;
+	@ApiModelProperty(notes = "Birthdate should be in the past")
 	private Date dob;
 	
 	public User(Integer id, String name, Date dob) {
